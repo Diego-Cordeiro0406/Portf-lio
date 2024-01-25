@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Página Inicial
+{% endblock %}
+
+{% block content %}
+  <h2>{{ profile.name }}</h2>
+  <p>{{ profile.github }}</p>
+  <p>{{ profile.linkedin }}</p>
+  <p>{{ profile.bio }}</p>
+{% endblock %}
