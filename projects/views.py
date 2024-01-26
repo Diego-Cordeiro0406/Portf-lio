@@ -24,7 +24,13 @@ class ProfileViewSet(viewsets.ModelViewSet):
 
         if request.method == 'GET' and pk is not None:
             profile_data = Profile.objects.get(pk=pk)
-            context = {"profile": profile_data}
+            projects = Project.objects.filter(profile=pk)
+            certificates = Certificate.objects.filter(profiles=pk)
+            context = {
+                "profile": profile_data,
+                "projects": projects,
+                "certificates": certificates
+            }
             return render(request, "profile_detail.html", context)
         return super().retrieve(request, *args, **kwargs)
 

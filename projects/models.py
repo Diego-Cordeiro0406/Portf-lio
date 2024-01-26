@@ -67,7 +67,11 @@ class Project(models.Model):
           MaxLengthValidator(500),
         ]
       )
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    profile = models.ForeignKey(
+        Profile,
+        on_delete=models.CASCADE,
+        related_name="projects"
+        )
 
     def __str__(self) -> str:
         return self.name
