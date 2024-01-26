@@ -1,0 +1,144 @@
+body {
+  align-items: center;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Source Sans Pro', sans-serif;
+  max-width: 100vw;
+  justify-content: space-between;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+a:active {
+  box-shadow: none; /* Remove a sombra ao clicar */
+  /* Adicione qualquer outra propriedade para personalizar a aparência ao clicar */
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#header-name {
+  font-weight: bold;
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+
+.about {
+  align-items: center;
+  display: flex;
+  font-weight: bold;
+  justify-content: space-evenly;
+  margin-right: 10px;
+  text-transform: uppercase;
+  width: 400px;
+}
+
+.main-container {
+  align-items: center;
+  background-image: linear-gradient(45deg, rgb(187, 187, 194), rgb(163, 160, 160));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 800px;
+  text-align: center;
+  width: 100vw;
+}
+
+.about-me {
+  align-items: center;
+  display: flex;
+  height: 400px;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+
+.about-me-title {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  width: 100vw;
+}
+
+.about-me-article {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  max-height: 100%;
+  text-align: start;
+  width: 50%;
+}
+
+.about-me-bio {
+  max-width: 500px;
+}
+
+.about-me-stacks {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.name-text {
+  font-weight: bold;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+.bio-text {
+  color: rgb(50, 48, 48);
+  font-size: larger;
+  max-width: 600px;
+}
+
+.main-button {
+  background-color: rgb(234, 234, 15);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: large;
+  height: 50px;
+  padding: 5px;
+  transition: transform 0.3s ease;
+  text-align: center;
+  width: 200px;
+}
+
+footer {
+  align-items: center;
+  background-image: linear-gradient(45deg, rgb(187, 187, 194), rgb(163, 160, 160));
+  display: flex;
+  height: 150px;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+
+.footer-img {
+  cursor: pointer;
+  height: 40px;
+  transition: transform 0.3s ease;
+  width: 40px;
+}
+
+.to-hover:hover {
+  transform: scale(1.1);
+}

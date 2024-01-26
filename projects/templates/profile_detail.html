@@ -5,25 +5,108 @@
 {% endblock %}
 
 {% block content %}
-  <main>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}">
+  <header class="header">
+    <p id="header-name">{{ profile.name }}</p>
+    <div class="about">
+      <a
+        class="to-hover"
+        href="#projects_id"
+        onclick="scrollToSection('projects_id')"
+      >
+        Projetos
+      </a>
+      <a
+        class="to-hover"
+        href="#certificates_id"
+        onclick="scrollToSection('certificates_id')"
+      >
+        Certificados
+      </a>
+      <a
+        class="to-hover"
+        href="#certificates_id"
+        onclick="scrollToSection('secao1')"
+      >
+        Sobre
+      </a>
+      <a
+        class="to-hover"
+        href="#redes_id"
+        onclick="scrollToSection('redes_id')"
+      >
+        Redes
+      </a>
+    </div>
+  </header>
+  <main class="main-container">
+    <!-- <h1 class="name-text">Oi, me chamo Jon Doe</h1> -->
     <h2>{{ profile.name }}</h2>
-    <p>{{ profile.github }}</p>
+    <p>{{ profile.github }}
     <p>{{ profile.linkedin }}</p>
-    <p>{{ profile.bio }}</p>
+    <p class="bio-text">{{ profile.bio }}</p>
+    <button class="main-button name-text to-hover">Projetos</button>
   </main>
-  {% for project in projects %}
-    <section>
-      <h2>{{ project.name }}</h2>
-      <span>{{ project.keyword }}</span>
-      <p>{{ project.key_skill }}</p>
-      <p><a href="{{ project.github_url }}">{{ project.github_url }}</a></p>
-    </section>
-  {% endfor %}
-  {% for certificate in certificates %}
-  <section>
-    <h2>{{ certificate.name }}</h2>
-    <span>{{ certificate.timestamp }}</span>
-    <p>{{ certificate.certifying_institution }}</p>
+  <div class="about-me-title">
+    <h2 class="name-text">Sobre mim</h2>
+  </div>
+  <section class="about-me">
+    <article class="about-me-article">
+      <span class="name-text about-me-bio">{{ profile.bio }}</span>
+    </article>
+    <div class="about-me-stacks">
+      <h2 class="name-text">Minhas stacks</h2>
+      <div>
+        <ul>
+          <li>Javascript</li>
+        </ul>
+      </div>
+    </div>
   </section>
-{% endfor %}
+  <section id="projects_id">
+    {% for project in projects %}
+      <section>
+        <h2>{{ project.name }}</h2>
+        <span>{{ project.keyword }}</span>
+        <p>{{ project.key_skill }}</p>
+        <p><a href="{{ project.github_url }}">{{ project.github_url }}</a></p>
+      </section>
+    {% endfor %}
+  </section>
+  <section id="certificates_id">
+    {% for certificate in certificates %}
+      <section>
+        <h2>{{ certificate.name }}</h2>
+        <span>{{ certificate.timestamp }}</span>
+        <p>{{ certificate.certifying_institution }}</p>
+      </section>
+    {% endfor %}
+  </section>
+  <footer id="redes_id">
+    <a href="{{ profile.linkedin }}">
+      <img class="footer-img to-hover" src="{% static '/img/email_3694289.png' %}" alt="email logo">
+    </a>
+    <a href="{{ profile.github }}">
+      <img class="footer-img to-hover" src="{% static '/img/github_3291695.png' %}" alt="email logo">
+    </a>
+    <a href="{{ profile.linkedin }}">
+      <img class="footer-img to-hover" src="{% static '/img/linkedin_3536569.png' %}" alt="email logo">
+    </a>
+  </footer>
+  <script>
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            // Calcula a posição do topo da seção
+            const offsetTop = section.offsetTop;
+
+            // Rola suavemente até a seção
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    }
+  </script>
 {% endblock %}
