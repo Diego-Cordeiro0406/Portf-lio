@@ -103,10 +103,6 @@ class Certificate(models.Model):
     certifying_institution = models.ForeignKey(
         CertifyingInstitution,
         on_delete=models.CASCADE,
-        validators=[
-            MinLengthValidator(1),
-            MaxLengthValidator(500),
-          ],
         related_name="certificates"
       )
     timestamp = models.DateTimeField(
