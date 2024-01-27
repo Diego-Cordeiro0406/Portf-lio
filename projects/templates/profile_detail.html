@@ -6,65 +6,70 @@
 
 {% block content %}
 {% load static %}
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}">
   <header class="header">
     <p id="header-name">{{ profile.name }}</p>
     <div class="about">
       <a
         class="to-hover"
-        href="#projects_id"
-        onclick="scrollToSection('projects_id')"
+        href="#projetos"
+        onclick="scrollToSection('projetos')"
       >
         Projetos
       </a>
       <a
         class="to-hover"
-        href="#certificates_id"
-        onclick="scrollToSection('certificates_id')"
+        href="#certificados"
+        onclick="scrollToSection('certificados')"
       >
         Certificados
       </a>
       <a
         class="to-hover"
-        href="#certificates_id"
-        onclick="scrollToSection('secao1')"
+        href="#sobre"
+        onclick="scrollToSection('sobre')"
       >
         Sobre
       </a>
       <a
         class="to-hover"
-        href="#redes_id"
-        onclick="scrollToSection('redes_id')"
+        href="#redes"
+        onclick="scrollToSection('redes')"
       >
         Redes
       </a>
     </div>
   </header>
   <main class="main-container">
-    <!-- <h1 class="name-text">Oi, me chamo Jon Doe</h1> -->
-    <h2>{{ profile.name }}</h2>
-    <p>{{ profile.github }}
-    <p>{{ profile.linkedin }}</p>
+    <h1 class="name-text">Oi, me chamo Jon Doe</h1>
     <p class="bio-text">{{ profile.bio }}</p>
     <button class="main-button name-text to-hover">Projetos</button>
   </main>
   <div class="about-me-title">
     <h2 class="name-text">Sobre mim</h2>
+    <span class="line"></span>
   </div>
-  <section class="about-me">
+  <section id="sobre" class="about-me">
     <article class="about-me-article">
-      <span class="name-text about-me-bio">{{ profile.bio }}</span>
+      <h2 class="name-text">Mais sobre mim</h2>
+      <span class="about-me-bio">{{ profile.bio }}</span>
     </article>
     <div class="about-me-stacks">
       <h2 class="name-text">Minhas stacks</h2>
-      <div>
-        <ul>
+        <ul class="my-stacks">
+          <li>HTML</li>
+          <li>CSS</li>
           <li>Javascript</li>
+          <li>Docker</li>
+          <li>mySQL</li>
+          <li>Python</li>
+          <li>React</li>
+          <li>Django</li>
         </ul>
-      </div>
     </div>
   </section>
-  <section id="projects_id">
+  <section id="projetos">
     {% for project in projects %}
       <section>
         <h2>{{ project.name }}</h2>
@@ -74,7 +79,7 @@
       </section>
     {% endfor %}
   </section>
-  <section id="certificates_id">
+  <section id="certificados">
     {% for certificate in certificates %}
       <section>
         <h2>{{ certificate.name }}</h2>
@@ -83,7 +88,7 @@
       </section>
     {% endfor %}
   </section>
-  <footer id="redes_id">
+  <footer id="redes">
     <a href="{{ profile.linkedin }}">
       <img class="footer-img to-hover" src="{% static '/img/email_3694289.png' %}" alt="email logo">
     </a>

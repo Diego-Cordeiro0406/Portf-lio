@@ -3,10 +3,10 @@ requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-py-modules = ['super_portfolio']
+py-modules = ['Portfolio']
 
 [project]
-name = "super-portfolio"
+name = "Portfolio"
 version = "0.1.0"
 description = ""
 readme = "readme.md"

@@ -14,6 +14,7 @@ body {
 
 .header {
   align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   display: flex;
   height: 100px;
   justify-content: space-between;
@@ -49,10 +50,11 @@ a {
 .main-container {
   align-items: center;
   background-image: linear-gradient(45deg, rgb(187, 187, 194), rgb(163, 160, 160));
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 800px;
+  height: 770px;
   text-align: center;
   width: 100vw;
 }
@@ -68,6 +70,8 @@ a {
 .about-me-title {
   align-items: center;
   display: flex;
+  flex-direction: column;
+  font-size: larger;
   justify-content: center;
   height: 100px;
   width: 100vw;
@@ -76,13 +80,17 @@ a {
 .about-me-article {
   align-items: center;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  justify-content: start;
   max-height: 100%;
   text-align: start;
   width: 50%;
 }
 
 .about-me-bio {
+  color: #666;
+  margin-top: 16px;
   max-width: 500px;
 }
 
@@ -90,7 +98,8 @@ a {
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  height: 100%;
+  justify-content: start;
   width: 50%;
 }
 
@@ -141,4 +150,40 @@ footer {
 
 .to-hover:hover {
   transform: scale(1.1);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  align-items: center;
+  background-color: rgb(234, 234, 15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 5px;
+  display: flex;
+  font-weight: bold;
+  height: 50px;
+  justify-content: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-transform: uppercase;
+  width: 120px;
+}
+
+.my-stacks {
+  display: flex;
+  flex-wrap: wrap;
+  height: 40%;
+  justify-content: center;
+  width: 80%;
+}
+
+.line {
+  background-color: rgb(234, 234, 15);
+  border-radius: 5px;
+  height: 5px;
+  margin-top: 10px;
+  width: 30px;
 }
