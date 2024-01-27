@@ -46,7 +46,7 @@
     <p class="bio-text">{{ profile.bio }}</p>
     <button class="main-button name-text to-hover">Projetos</button>
   </main>
-  <div class="about-me-title">
+  <div class="section-title">
     <h2 class="name-text">Sobre mim</h2>
     <span class="line"></span>
   </div>
@@ -69,12 +69,20 @@
         </ul>
     </div>
   </section>
-  <section id="projetos">
+  <div class="section-title">
+    <h2 class="name-text">Meus projetos</h2>
+    <span class="line"></span>
+  </div>
+  <section id="projetos" class="projects">
     {% for project in projects %}
-      <section>
+      <section class="project-container">
         <h2>{{ project.name }}</h2>
         <span>{{ project.keyword }}</span>
-        <p>{{ project.key_skill }}</p>
+        <div class="technologies-container">
+          {% for technology in project.key_skill%}
+            <p>{{ technology }}</p>
+          {% endfor %}
+        </div>
         <p><a href="{{ project.github_url }}">{{ project.github_url }}</a></p>
       </section>
     {% endfor %}

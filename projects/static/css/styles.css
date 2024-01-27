@@ -59,7 +59,7 @@ a {
   width: 100vw;
 }
 
-.about-me {
+.about-me, .projects {
   align-items: center;
   display: flex;
   height: 400px;
@@ -67,7 +67,7 @@ a {
   width: 100vw;
 }
 
-.about-me-title {
+.section-title {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -186,4 +186,20 @@ li {
   height: 5px;
   margin-top: 10px;
   width: 30px;
+}
+
+.project-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(45deg, rgb(187, 187, 194), rgb(163, 160, 160));
+  border-radius: 5px;
+  height: 300px;
+  text-transform: uppercase;
+  width: 300px;
+}
+
+.technologies-container {
+  display: flex;
+  width: 200px;
 }
