@@ -11,34 +11,10 @@
   <header class="header">
     <p id="header-name">{{ profile.name }}</p>
     <div class="about">
-      <a
-        class="to-hover"
-        href="#projetos"
-        onclick="scrollToSection('projetos')"
-      >
-        Projetos
-      </a>
-      <a
-        class="to-hover"
-        href="#certificados"
-        onclick="scrollToSection('certificados')"
-      >
-        Certificados
-      </a>
-      <a
-        class="to-hover"
-        href="#sobre"
-        onclick="scrollToSection('sobre')"
-      >
-        Sobre
-      </a>
-      <a
-        class="to-hover"
-        href="#redes"
-        onclick="scrollToSection('redes')"
-      >
-        Redes
-      </a>
+      <a class="to-hover" href="#projetos">Projetos</a>
+      <a class="to-hover" href="#certificados">Certificados</a>
+      <a class="to-hover" href="#sobre">Sobre</a>
+      <a class="to-hover" href="#redes">Redes</a>
     </div>
   </header>
   <main class="main-container">
@@ -46,11 +22,11 @@
     <p class="bio-text">{{ profile.bio }}</p>
     <button class="main-button name-text to-hover">Projetos</button>
   </main>
-  <div class="section-title">
+  <div id="sobre" class="section-title">
     <h2 class="name-text">Sobre mim</h2>
     <span class="line"></span>
   </div>
-  <section id="sobre" class="about-me">
+  <section class="about-me">
     <article class="about-me-article">
       <h2 class="name-text">Mais sobre mim</h2>
       <span class="about-me-bio">{{ profile.bio }}</span>
@@ -69,25 +45,33 @@
         </ul>
     </div>
   </section>
-  <div class="section-title">
+  <div id="projetos" class="section-title">
     <h2 class="name-text">Meus projetos</h2>
     <span class="line"></span>
   </div>
-  <section id="projetos" class="projects">
+  <section class="projects">
     {% for project in projects %}
       <section class="project-container">
         <h2>{{ project.name }}</h2>
         <span>{{ project.keyword }}</span>
-        <div class="technologies-container">
+        <div class="technologies">
           {% for technology in project.key_skill%}
-            <p>{{ technology }}</p>
+            <p class="technology-p">{{ technology }}</p>
           {% endfor %}
         </div>
-        <p><a href="{{ project.github_url }}">{{ project.github_url }}</a></p>
+        <img id="project-image" src="{% static '/img/online-store.png' %}" alt="project-screenshot">
+        <p id="link-container">
+          <a id="link-text" href="{{ project.github_url }}">Ir ao repósitorio</a>
+          <img id="link-image" src="{% static '/img/icons8-link-64.png' %}" alt="link logo">
+        </p>
       </section>
     {% endfor %}
   </section>
-  <section id="certificados">
+  <div id="certificados" class="section-title">
+    <h2 class="name-text">Certificados</h2>
+    <span class="line"></span>
+  </div>
+  <section class="certificates">
     {% for certificate in certificates %}
       <section>
         <h2>{{ certificate.name }}</h2>
@@ -107,19 +91,4 @@
       <img class="footer-img to-hover" src="{% static '/img/linkedin_3536569.png' %}" alt="email logo">
     </a>
   </footer>
-  <script>
-    function scrollToSection(sectionId) {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            // Calcula a posição do topo da seção
-            const offsetTop = section.offsetTop;
-
-            // Rola suavemente até a seção
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    }
-  </script>
 {% endblock %}

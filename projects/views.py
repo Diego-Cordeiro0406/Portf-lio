@@ -25,7 +25,6 @@ class ProfileViewSet(viewsets.ModelViewSet):
         if request.method == 'GET' and pk is not None:
             profile_data = Profile.objects.get(pk=pk)
             projects = Project.objects.filter(profile=pk)
-            print(projects)
             projects_formated_list = list()
             for project in projects:
                 key_skill_formated = project.key_skill.split(",")
