@@ -33,7 +33,8 @@ class ProfileViewSet(viewsets.ModelViewSet):
                     "description": project.description,
                     "github_url": project.github_url,
                     "keyword": project.keyword,
-                    "key_skill": key_skill_formated
+                    "key_skill": key_skill_formated,
+                    "image": project.project_image
                 }
                 projects_formated_list.append(project_formated)
 

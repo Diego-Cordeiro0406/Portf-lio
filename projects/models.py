@@ -28,6 +28,10 @@ class Profile(models.Model):
             MaxLengthValidator(500),
           ]
       )
+    profile_image = models.ImageField(
+        upload_to="projects/static/img",
+        blank=True
+      )
 
     def __str__(self) -> str:
         return self.name
@@ -60,6 +64,10 @@ class Project(models.Model):
           MaxLengthValidator(500),
         ]
       )
+    project_image = models.ImageField(
+        upload_to="projects/static/img",
+        blank=True
+        )
     key_skill = models.CharField(
       max_length=50,
       validators=[
@@ -108,6 +116,10 @@ class Certificate(models.Model):
         CertifyingInstitution,
         on_delete=models.CASCADE,
         related_name="certificates"
+      )
+    certificate_image = models.ImageField(
+        upload_to="projects/static/img",
+        blank=True
       )
     timestamp = models.DateTimeField(
         auto_now_add=True,

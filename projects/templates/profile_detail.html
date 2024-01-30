@@ -21,6 +21,17 @@
     <h1 class="name-text">Oi, me chamo Jon Doe</h1>
     <p class="bio-text">{{ profile.bio }}</p>
     <button class="main-button name-text to-hover">Projetos</button>
+    <aside id="redes">
+      <a href="{{ profile.linkedin }}">
+        <img class="redes-img to-hover" src="{% static '/img/email_3694289.png' %}" alt="email logo">
+      </a>
+      <a href="{{ profile.github }}">
+        <img class="redes-img to-hover" src="{% static '/img/github_3291695.png' %}" alt="email logo">
+      </a>
+      <a href="{{ profile.linkedin }}">
+        <img class="redes-img to-hover" src="{% static '/img/linkedin_3536569.png' %}" alt="email logo">
+      </a>
+    </aside>
   </main>
   <div id="sobre" class="section-title">
     <h2 class="name-text">Sobre mim</h2>
@@ -51,7 +62,7 @@
   </div>
   <section class="projects">
     {% for project in projects %}
-      <section class="project-container">
+      <section class="project-container to-hover">
         <h2>{{ project.name }}</h2>
         <span>{{ project.keyword }}</span>
         <div class="technologies">
@@ -59,7 +70,7 @@
             <p class="technology-p">{{ technology }}</p>
           {% endfor %}
         </div>
-        <img id="project-image" src="{% static '/img/online-store.png' %}" alt="project-screenshot">
+        <!-- <img id="project-image" src="{% static project.image.url %}" alt="project-screenshot"> -->
         <p id="link-container">
           <a id="link-text" href="{{ project.github_url }}">Ir ao repósitorio</a>
           <img id="link-image" src="{% static '/img/icons8-link-64.png' %}" alt="link logo">
@@ -73,22 +84,19 @@
   </div>
   <section class="certificates">
     {% for certificate in certificates %}
-      <section>
-        <h2>{{ certificate.name }}</h2>
-        <span>{{ certificate.timestamp }}</span>
-        <p>{{ certificate.certifying_institution }}</p>
+      <section class="certificate-container">
+        <div class="certificate-left">
+          <h2>{{ certificate.name }}</h2>
+          <img
+            id="certificate-image-container"
+            src="{% static certificate.certificate_image.url %}"
+            alt="certificate-image"
+          >
+        </div>
+        <div class="certificate-right">
+          <p id="certificate-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.</p>
+        </div> 
       </section>
     {% endfor %}
   </section>
-  <footer id="redes">
-    <a href="{{ profile.linkedin }}">
-      <img class="footer-img to-hover" src="{% static '/img/email_3694289.png' %}" alt="email logo">
-    </a>
-    <a href="{{ profile.github }}">
-      <img class="footer-img to-hover" src="{% static '/img/github_3291695.png' %}" alt="email logo">
-    </a>
-    <a href="{{ profile.linkedin }}">
-      <img class="footer-img to-hover" src="{% static '/img/linkedin_3536569.png' %}" alt="email logo">
-    </a>
-  </footer>
 {% endblock %}

@@ -13,6 +13,7 @@ body {
   max-width: 100vw;
   justify-content: space-between;
   overflow-x: hidden;
+  text-transform: uppercase;
   width: 100vw;
 }
 
@@ -61,8 +62,9 @@ a {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   height: 770px;
+  justify-content: center;
+  position: relative;
   text-align: center;
   width: 100vw;
 }
@@ -76,7 +78,7 @@ a {
 }
 
 .about-me {
-  background-color: rgb(240, 238, 238);
+  background-image: linear-gradient(45deg, rgb(240, 238, 238), rgb(255, 255, 255));
 }
 
 .section-title {
@@ -106,11 +108,12 @@ a {
   display: flex;
   justify-content: center;
   margin-top: 16px;
+  text-transform: none;
   width: 80%;
 }
 
 #sobre {
-  background-color: rgb(240, 238, 238);
+  background-image: linear-gradient(45deg, rgb(240, 240, 240), rgb(255, 255, 255));
 }
 
 .about-me-stacks {
@@ -151,16 +154,21 @@ h1 {
   width: 200px;
 }
 
-footer {
+#redes {
   align-items: center;
-  background-image: linear-gradient(45deg, rgb(187, 187, 194), rgb(163, 160, 160));
+  background-color: #faf6f6;
+  border-radius: 5px;
   display: flex;
+  flex-direction: column;
   height: 150px;
   justify-content: space-evenly;
-  width: 100vw;
+  position: absolute;
+  left: 0px;
+  padding: 10px;
+  top: 250px;
 }
 
-.footer-img {
+.redes-img {
   cursor: pointer;
   height: 40px;
   transition: transform 0.3s ease;
@@ -226,8 +234,10 @@ li {
   display: flex;
   flex-direction: column;
   height: 350px;
-  margin-left: 5px;
-  margin-right: 5px;
+  justify-content: space-evenly;
+  margin-left: 15px;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
   text-transform: uppercase;
   width: 400px;
 }
@@ -270,4 +280,46 @@ li {
 
 #link-text {
   font-weight: 600;
+}
+
+.certificates {
+  flex-direction: column;
+  background-image: linear-gradient(45deg, rgb(240, 234, 234), rgb(255, 255, 255));
+}
+
+.certificate-container {
+  align-items: center;
+  display: flex;
+  height: 350px;
+  justify-content: center;
+  width: 100vw;
+}
+
+#certificados {
+  background-image: linear-gradient(45deg, rgb(240, 240, 240), rgb(255, 255, 255));
+}
+
+.certificate-left, .certificate-right {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+#certificate-image-container {
+  border-radius: 5px;
+  height: 200px;
+  width: 400px;
+}
+
+
+.certificate-right {
+  text-align: start;
+  text-transform: none;
+}
+
+#certificate-text {
+  color: #666;
+  max-width: 400px;
 }
