@@ -313,7 +313,7 @@ li {
 
 #certificate-image-container {
   border-radius: 5px;
-  height: 200px;
+  height: 250px;
   width: 400px;
 }
 
@@ -330,5 +330,6 @@ li {
 
 #division-line {
   border-bottom: 1px solid rgb(151, 135, 135);
-  width: 576px;
+  margin-top: 10px;
+  width: 90%;
 }
