@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MinLengthValidator, MaxLengthValidator
+from cloudinary.models import CloudinaryField
 
 
 class Profile(models.Model):
@@ -28,10 +29,7 @@ class Profile(models.Model):
             MaxLengthValidator(500),
           ]
       )
-    profile_image = models.ImageField(
-        upload_to="projects/static/img",
-        blank=True
-      )
+    profile_image = CloudinaryField(blank=True)
 
     def __str__(self) -> str:
         return self.name
@@ -64,10 +62,7 @@ class Project(models.Model):
           MaxLengthValidator(500),
         ]
       )
-    project_image = models.ImageField(
-        upload_to="projects/static/img",
-        blank=True
-        )
+    project_image = CloudinaryField(blank=True)
     key_skill = models.CharField(
       max_length=50,
       validators=[
@@ -117,10 +112,7 @@ class Certificate(models.Model):
         on_delete=models.CASCADE,
         related_name="certificates"
       )
-    certificate_image = models.ImageField(
-        upload_to="projects/static/img",
-        blank=True
-      )
+    certificate_image = CloudinaryField(blank=True)
     timestamp = models.DateTimeField(
         auto_now_add=True,
         validators=[
