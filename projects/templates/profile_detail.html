@@ -6,107 +6,97 @@
 
 {% block content %}
 {% load static %}
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}">
   <header class="header">
     <p id="header-name">{{ profile.name }}</p>
     <div class="about">
-      <a
-        class="to-hover"
-        href="#projects_id"
-        onclick="scrollToSection('projects_id')"
-      >
-        Projetos
-      </a>
-      <a
-        class="to-hover"
-        href="#certificates_id"
-        onclick="scrollToSection('certificates_id')"
-      >
-        Certificados
-      </a>
-      <a
-        class="to-hover"
-        href="#certificates_id"
-        onclick="scrollToSection('secao1')"
-      >
-        Sobre
-      </a>
-      <a
-        class="to-hover"
-        href="#redes_id"
-        onclick="scrollToSection('redes_id')"
-      >
-        Redes
-      </a>
+      <a class="to-hover" href="#projetos">Projetos</a>
+      <a class="to-hover" href="#certificados">Certificados</a>
+      <a class="to-hover" href="#sobre">Sobre</a>
+      <a class="to-hover" href="#redes">Redes</a>
     </div>
   </header>
   <main class="main-container">
-    <!-- <h1 class="name-text">Oi, me chamo Jon Doe</h1> -->
-    <h2>{{ profile.name }}</h2>
-    <p>{{ profile.github }}
-    <p>{{ profile.linkedin }}</p>
+    <h1 class="name-text">Oi, me chamo Jon Doe</h1>
     <p class="bio-text">{{ profile.bio }}</p>
     <button class="main-button name-text to-hover">Projetos</button>
+    <aside id="redes">
+      <a href="{{ profile.linkedin }}">
+        <img class="redes-img to-hover" src="{% static '/img/email_3694289.png' %}" alt="email logo">
+      </a>
+      <a href="{{ profile.github }}">
+        <img class="redes-img to-hover" src="{% static '/img/github_3291695.png' %}" alt="email logo">
+      </a>
+      <a href="{{ profile.linkedin }}">
+        <img class="redes-img to-hover" src="{% static '/img/linkedin_3536569.png' %}" alt="email logo">
+      </a>
+    </aside>
   </main>
-  <div class="about-me-title">
+  <div id="sobre" class="section-title">
     <h2 class="name-text">Sobre mim</h2>
+    <span class="line"></span>
   </div>
   <section class="about-me">
     <article class="about-me-article">
-      <span class="name-text about-me-bio">{{ profile.bio }}</span>
+      <h2 class="name-text">Mais sobre mim</h2>
+      <span class="about-me-bio">{{ profile.bio }}</span>
     </article>
     <div class="about-me-stacks">
       <h2 class="name-text">Minhas stacks</h2>
-      <div>
-        <ul>
+        <ul class="my-stacks">
+          <li>HTML</li>
+          <li>CSS</li>
           <li>Javascript</li>
+          <li>Docker</li>
+          <li>mySQL</li>
+          <li>Python</li>
+          <li>React</li>
+          <li>Django</li>
         </ul>
-      </div>
     </div>
   </section>
-  <section id="projects_id">
+  <div id="projetos" class="section-title">
+    <h2 class="name-text">Meus projetos</h2>
+    <span class="line"></span>
+  </div>
+  <section class="projects">
     {% for project in projects %}
-      <section>
+      <section class="project-container to-hover">
         <h2>{{ project.name }}</h2>
         <span>{{ project.keyword }}</span>
-        <p>{{ project.key_skill }}</p>
-        <p><a href="{{ project.github_url }}">{{ project.github_url }}</a></p>
+        <div class="technologies">
+          {% for technology in project.key_skill%}
+            <p class="technology-p">{{ technology }}</p>
+          {% endfor %}
+        </div>
+        <!-- <img id="project-image" src="{% static project.image.url %}" alt="project-screenshot"> -->
+        <p id="link-container">
+          <a id="link-text" href="{{ project.github_url }}">Ir ao repósitorio</a>
+          <img id="link-image" src="{% static '/img/icons8-link-64.png' %}" alt="link logo">
+        </p>
       </section>
     {% endfor %}
   </section>
-  <section id="certificates_id">
+  <div id="certificados" class="section-title">
+    <h2 class="name-text">Certificados</h2>
+    <span class="line"></span>
+  </div>
+  <section class="certificates">
     {% for certificate in certificates %}
-      <section>
-        <h2>{{ certificate.name }}</h2>
-        <span>{{ certificate.timestamp }}</span>
-        <p>{{ certificate.certifying_institution }}</p>
+      <section class="certificate-container">
+        <div class="certificate-left">
+          <h2>{{ certificate.name }}</h2>
+          <img
+            id="certificate-image-container"
+            src="{% static certificate.certificate_image.url %}"
+            alt="certificate-image"
+          >
+        </div>
+        <div class="certificate-right">
+          <p id="certificate-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.</p>
+        </div> 
       </section>
     {% endfor %}
   </section>
-  <footer id="redes_id">
-    <a href="{{ profile.linkedin }}">
-      <img class="footer-img to-hover" src="{% static '/img/email_3694289.png' %}" alt="email logo">
-    </a>
-    <a href="{{ profile.github }}">
-      <img class="footer-img to-hover" src="{% static '/img/github_3291695.png' %}" alt="email logo">
-    </a>
-    <a href="{{ profile.linkedin }}">
-      <img class="footer-img to-hover" src="{% static '/img/linkedin_3536569.png' %}" alt="email logo">
-    </a>
-  </footer>
-  <script>
-    function scrollToSection(sectionId) {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            // Calcula a posição do topo da seção
-            const offsetTop = section.offsetTop;
-
-            // Rola suavemente até a seção
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    }
-  </script>
 {% endblock %}
