@@ -77,6 +77,10 @@ a {
   width: 100vw;
 }
 
+.certificates {
+  height: auto;
+}
+
 .about-me {
   background-image: linear-gradient(45deg, rgb(240, 238, 238), rgb(255, 255, 255));
 }
@@ -322,4 +326,9 @@ li {
 #certificate-text {
   color: #666;
   max-width: 400px;
+}
+
+#division-line {
+  border-bottom: 1px solid rgb(151, 135, 135);
+  width: 576px;
 }
