@@ -11,14 +11,13 @@
   <header class="header">
     <p id="header-name">{{ profile.name }}</p>
     <div class="about">
+      <a class="to-hover" href="#sobre">Sobre</a>
       <a class="to-hover" href="#projetos">Projetos</a>
       <a class="to-hover" href="#certificados">Certificados</a>
-      <a class="to-hover" href="#sobre">Sobre</a>
-      <a class="to-hover" href="#redes">Redes</a>
     </div>
   </header>
   <main class="main-container">
-    <h1 class="name-text">Oi, me chamo Jon Doe</h1>
+    <h1 class="name-text">{{ profile.name }}</h1>
     <p class="bio-text">{{ profile.bio }}</p>
     <button class="main-button name-text to-hover">Projetos</button>
     <aside id="redes">
@@ -94,7 +93,7 @@
           >
         </div>
         <div class="certificate-right">
-          <p id="certificate-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.</p>
+          <p id="certificate-text">{{ certificate.certificate_text }}</p>
         </div> 
       </section>
     {% endfor %}
