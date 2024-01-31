@@ -10,3 +10,4 @@ markdown-it-py==2.2.0
 mysqlclient==2.2.0
 Pillow==10.0.0
 whitenoise==6.5.0
+cloudinary==1.33.0

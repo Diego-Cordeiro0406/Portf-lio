@@ -70,7 +70,7 @@
             <p class="technology-p">{{ technology }}</p>
           {% endfor %}
         </div>
-        <!-- <img id="project-image" src="{% static project.image.url %}" alt="project-screenshot"> -->
+        <img id="project-image" src="{{ project.image.url }}" alt="project-screenshot">
         <p id="link-container">
           <a id="link-text" href="{{ project.github_url }}">Ir ao repósitorio</a>
           <img id="link-image" src="{% static '/img/icons8-link-64.png' %}" alt="link logo">
@@ -89,7 +89,7 @@
           <h2>{{ certificate.name }}</h2>
           <img
             id="certificate-image-container"
-            src="{% static certificate.certificate_image.url %}"
+            src="{{ certificate.certificate_image.url }}"
             alt="certificate-image"
           >
         </div>
