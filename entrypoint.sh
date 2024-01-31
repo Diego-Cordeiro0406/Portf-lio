@@ -3,7 +3,7 @@
 # Essa parte é importante para garantir que o banco de dados já esteja no ar
 # antes de rodar as migrações
 
-while ! nc -z db_service 3306 ; do
+while ! nc -z $MYSQLHOST $MYSQLPORT ; do
     echo "> > > Esperando o banco de dados MySQL ficar disponível..."
     sleep 3
 done

@@ -8,6 +8,7 @@ services:
     volumes:
       - ./database:/docker-entrypoint-initdb.d/:ro
   web:
+    env_file: .env
     build:
       context: .
       dockerfile: Dockerfile
