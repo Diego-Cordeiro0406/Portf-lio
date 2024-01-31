@@ -17,8 +17,8 @@
     </div>
   </header>
   <main class="main-container">
-    <h1 class="name-text">{{ profile.name }}</h1>
-    <p class="bio-text">{{ profile.bio }}</p>
+    <h1 class="name-text">Oi, me chamo{{ profile.name }}</h1>
+    <p class="bio-text">Um desenvolvedor Web <strong>Full Stack</strong>, construindo o <strong>Frontend</strong> e <strong>Backend</strong> de sites e aplicativos</p>
     <button class="main-button name-text to-hover">Projetos</button>
     <aside id="redes">
       <a href="{{ profile.linkedin }}">
@@ -96,6 +96,7 @@
           <p id="certificate-text">{{ certificate.certificate_text }}</p>
         </div> 
       </section>
+      <span id="division-line"></span>
     {% endfor %}
   </section>
 {% endblock %}
