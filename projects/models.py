@@ -113,6 +113,7 @@ class Certificate(models.Model):
         related_name="certificates"
       )
     certificate_image = CloudinaryField(blank=True)
+    certificate_text = models.TextField()
     timestamp = models.DateTimeField(
         auto_now_add=True,
         validators=[
