@@ -5,34 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet"> -->
-  <title>Document</title>
+  <title>Portfólio</title>
 </head>
 <body class="w-vw h-vh bg-gray-200">
-  <header class="w-full h-20 flex items-center justify-evenly bg-[#222222]">
-    <div>
-      <p>logo</p>
-    </div>
+  <header class="w-full h-20 flex items-center justify-evenly bg-[#222222] header-container fixed">
+    <a href="#inicio">
+      <img src="./assets/logo.png" alt="logo">
+    </a>
     <div
       class="
-        w-[29.608rem]
         h-[1.25rem]
         flex
         justify-around
         text-white
         font-semibold
         links-text
+        links-container
       "
     >
-      <a href="">Home</a>
-      <a href="">Projetos</a>
-      <a href="">Certificados</a>
-      <a href="">Contato</a>
+      <a class="to-hover" href="#stacks">Stacks</a>
+      <a class="to-hover" href="#projetos">Projetos</a>
+      <a class="to-hover" href="#certificados">Certificados</a>
+      <a class="to-hover" href="#contato">Contato</a>
     </div>
   </header>
   <main
+    id="inicio"
     class="
       bg-[#161513]
       flex
@@ -47,26 +45,44 @@
       <img class="w-[15.688rem] h-[13.938rem] mt-[6.188rem]" src="./assets/avatar.png" alt="avatar">
     </div>
     <section class="flex items-center flex-col">
-      <h1
+      <div class="title-container mt-[2.563rem]">
+        <h1
         class="
           text-center
-          w-[41rem]
-          h-32
+          titles-container
           font-extrabold
-          text-[55px]
           title
           leading-[3.963rem]
           text-white
-          mt-[2.563rem]
         "
-      >
-        I do code and make content about it!
-      </h1>
+        >
+          Eu codifico soluções
+        </h1>
+        <h2 class="text-white leading-[3.963rem] title font-extrabold titles-container text-center">que transformam</h2>
+        <div class="ttl-container titles-container justify-center">
+          <p class="text-white leading-[3.963rem] title font-extrabold titles-container text-center">ideias em</p>
+          <p
+            class="
+              leading-[3.963rem]
+              title
+              font-extrabold
+              bg-gradient-to-r
+              from-[#FF8660]
+              to-[#9A33FF]
+              text-transparent
+              bg-clip-text
+              titles-container
+              realidade
+              "
+            >
+            realidade!
+          </p>
+        </div>
+      </div>
       <p
         class="
             text-center
-            w-[41rem]
-            h-[6.75rem]
+            description-container
             font-light
             text-lg
             title
@@ -74,10 +90,10 @@
             mt-[3.25rem]
           "
       >
-        I am a seasoned full-stack software engineer with over 
-        8 years of professional experience, specializing in backend development. 
-        My expertise lies in crafting robust and scalable SaaS-based 
-        architectures on the Amazon AWS platform.
+        Sou um desenvolvedor Full Stack iniciante com paixão por tecnologia e aprendizado contínuo. 
+        Possuo conhecimentos em desenvolvimento front-end e back-end, trabalhando com tecnologias como 
+        HTML, CSS, JavaScript, Node.js e bancos de dados SQL/NoSQL. 
+        Tenho um grande interesse em criar aplicações web que proporcionem experiências de usuário fluidas e eficientes.
       </p>
     </section>
     <div>
@@ -99,7 +115,7 @@
         DOWNLOAD CV
     </button>
     </div>
-    <section class="flex flex-col items-center">
+    <section id="stacks" class="flex flex-col items-center stacks-container">
       <h3
         class="
           text-[#C5C5C5]
@@ -111,15 +127,15 @@
       >
         EXPERIENCIA COM
       </h3>
-      <section class="flex flex-col mt-14">
-        <div class="flex justify-between w-[27.875rem]">
+      <section class="flex flex-col mt-14 stacks-container">
+        <div class="flex justify-between stacks-container">
           <img class="size-[2.625rem] " src="./assets/css.svg" alt="css-logo">
           <img class="size-[2.625rem]" src="./assets/html.svg" alt="html-logo">
           <img class="size-[2.625rem]" src="./assets/javascript.svg" alt="javascript-logo">
           <img class="size-[2.625rem]" src="./assets/typescript.svg" alt="typescript-logo">
           <img class="size-[2.625rem]" src="./assets/react.svg" alt="react-logo">
         </div>
-        <div class="flex justify-between w-[27.875rem] mt-10">
+        <div class="flex justify-between stacks-container mt-10">
           <img class="size-[2.625rem]" src="./assets/node.svg" alt="node-logo">
           <img class="size-[2.625rem]" src="./assets/tailwind.svg" alt="tailwind-logo">
           <img class="size-[2.625rem]" src="./assets/mysql.svg" alt="mysql-logo">
@@ -128,7 +144,7 @@
         </div>
       </section>
     </section>
-    <section class="mt-[6.063rem] flex flex-col items-center">
+    <section id="projetos" class="mt-[6.063rem] flex flex-col items-center">
       <h3 
         class="
           bg-gradient-to-r
@@ -144,37 +160,38 @@
       >
         PROJETOS
       </h3>
-      <section class="w-[51.25rem] flex flex-wrap">
+      <section class="section-container projects-container flex flex-wrap">
         <div
           class="
-          w-[24.375rem]
+          project-container
           h-[18.813rem]
           bg-gray-300
           rounded-[18px]
-          mr-[2.438rem]
+          project-container-with-margin-r
         "
         ></div>
         <div
           class="
-          w-[24.375rem]
+          project-container
           h-[18.813rem]
           bg-gray-300
           rounded-[18px]
+          project-container-with-margin-t
         "
         ></div>
         <div
           class="
-          w-[24.375rem]
+          project-container
           h-[18.813rem]
           bg-gray-300
           rounded-[18px]
-          mt-[2.438rem]
-          mr-[2.438rem]
+          project-container-with-margin-rt
+          project-container-with-margin-t
         "
         ></div>
         <div
           class="
-          w-[24.375rem]
+          project-container
           h-[18.813rem]
           bg-gray-300
           rounded-[18px]
@@ -183,7 +200,7 @@
         ></div>
       </section>
     </section>
-    <section class="mt-[5.875rem] flex flex-col items-center">
+    <section id="certificados" class="mt-[5.875rem] flex flex-col items-center">
       <h3
         class="
         bg-gradient-to-r
@@ -199,11 +216,11 @@
       >
         CERTIFICADOS
       </h3>
-      <section class="w-[51.25rem]">
+      <section class="certificate-container">
         <div class="flex justify-between">
           <div class="flex items-center">
             <img class="h-8 mr-2.5" src="./assets/google-logo.svg" alt="node-logo">
-            <h3 class="title font-bold text-[1.359rem] text-white">UX Design</h3>
+            <h3 class="title font-bold certificate-title text-white">UX Design</h3>
           </div>
           <p class="title text-[#8491A0]">Outubro 2024</p>
         </div>
@@ -215,11 +232,11 @@
           definir dificuldades, apresentar soluções de design, criar wireframes e
           protótipos e testar designs para receber feedback.</p>
       </section>
-      <section class="w-[51.25rem] mt-[3.125rem]">
+      <section class="certificate-container mt-[3.125rem]">
         <div class="flex justify-between">
           <div class="flex items-center">
             <img class="h-8 mr-2.5" src="./assets/trybe.svg" alt="node-logo">
-            <h3 class="title font-bold text-[1.359rem] text-white">Formação em Desenvolvimento Full-Stack</h3>
+            <h3 class="title font-bold certificate-title text-white">Formação em Desenvolvimento Full-Stack</h3>
           </div>
           <p class="title text-[#8491A0]">Março 2024</p>
         </div>
@@ -236,8 +253,8 @@
     </section>
     </section>
   </main>
-  <footer class="w-full h-[26.125rem] bg-[#191919] flex items-center justify-center">
-    <div class="w-[51.25rem] h-[16.875rem] flex flex-col justify-between">
+ <footer id="contato" class="w-full h-[26.125rem] bg-[#191919] flex items-center justify-center">
+    <div class="footer-container h-[16.875rem] flex flex-col justify-between">
       <h3 class="text-2xl font-bold title text-white">Contato</h3>
       <p
         class="
@@ -245,11 +262,11 @@
           text-[0.938rem]
           text-[#C5C5C5]
           text-left
-          w-[42.25rem]
+          footer-text
         "
-      > Seasoned Full Stack Software Engineer with over 8 years of hands-on experience in designing
-        and implementing robust, scalable, and innovative web solutions. Adept at leveraging a
-        comprehensive skill set encompassing front-end and back-end technologies
+      > Desenvolvedor Full Stack com paixão por tecnologia e aprendizado contínuo. 
+        Possuo conhecimentos em desenvolvimento front-end e back-end, 
+        Tenho um grande interesse em criar aplicações web que proporcionem experiências de usuário fluidas e eficientes.
       </p>
       <div class="flex">
         <img class="mr-2" src="./assets/email.svg" alt="email-logo">
