@@ -42,7 +42,6 @@ html {
 
   .section-container {
     width: 100%;
-    flex-direction: column;
   }
 
   .stacks-container {
@@ -50,11 +49,48 @@ html {
   }
 
   .projects-container {
-    flex-direction: column;
+    width: 100%;
   }
 
   .project-container {
-    width: 300px;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-div-top {
+    height: 50%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  .project-div-bottom {
+    height: 50%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+
+  .project-title {
+    width: 90%;
+    text-align: left;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .project-description {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .stacks {
+    width: auto;
+    flex-wrap: wrap;
   }
 
   .project-container-with-margin-t {
@@ -107,7 +143,7 @@ html {
   }
 
   .section-container {
-    width: 820px;
+    width: 85%;
   }
 
   .stacks-container {
@@ -118,18 +154,54 @@ html {
     width: 820px;
   }
 
-  .projects-container {
-    flex-direction: row;
+  .project-container {
+    width: 90%;
+    display: flex;
+  }
+
+  .project-div {
+    height: 100%;
+    width: 50%;
+    justify-content: flex-start;
+  }
+
+  .project-div-top {
+    height: 100%;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+
+  .project-div-bottom {
+    height: 100%;
+    width: 50%;
+    justify-content: flex-start;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+
+
+  .stacks {
+    margin-left: 40px;
+    width: auto;
     flex-wrap: wrap;
   }
 
-  .project-container {
-    width: 390px;
+  .project-title {
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 
-  .project-container-with-margin-rt {
-    margin-top: 39px;
-    margin-right: 39px;
+  .project-description {
+    margin-left: 40px;
+    margin-bottom: 16px;
+  }
+
+  .projects-container {
+    width: 85%;
   }
 
   footer {
@@ -142,10 +214,6 @@ html {
 
   .footer-text {
     width: 820px;
-  }
-
-  .project-container-with-margin-r {
-    margin-right: 39px;
   }
 
   .realidade {
@@ -163,15 +231,6 @@ html {
 
   .project-container-with-margin-t {
     margin-top: 39px;
-  }
-
-  .project-container-with-margin-r {
-    margin-right: 0px;
-  }
-
-  .project-container-with-margin-rt {
-    margin-top: 39px;
-    margin-right: 0px;
   }
 }
 
@@ -204,14 +263,5 @@ html {
 
   .project-container-with-margin-t {
     margin-top: 39px;
-  }
-
-  .project-container-with-margin-r {
-    margin-right: 0px;
-  }
-
-  .project-container-with-margin-rt {
-    margin-top: 39px;
-    margin-right: 0px;
   }
 }
